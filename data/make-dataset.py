@@ -1,11 +1,11 @@
 import json
 from random import shuffle, randint
 
-with open("../config.json") as json_file:
+with open("config.json") as json_file:
     config = json.load(json_file)
 
 report_point = config["report_point"]
-dataset = "../"+config["save_dir"]+config["file_name"]
+dataset = config["save_dir"]+config["file_name"]
 
 
 def shuffle_multiple_list(*ls):
@@ -115,9 +115,9 @@ test_Y = dev_Y[start_index:]
 dev_Y = dev_Y[:start_index]
 
 
-save_dataset("../"+config["dataset_path"], "train", X, Y)
-save_dataset("../"+config["dataset_path"], "dev", dev_X, dev_Y)
-save_dataset("../"+config["dataset_path"], "test", test_X, test_Y)
+save_dataset(config["dataset_path"], "train", X, Y)
+save_dataset(config["dataset_path"], "dev", dev_X, dev_Y)
+save_dataset(config["dataset_path"], "test", test_X, test_Y)
 print("train dataset size {}".format(len(X)))
 print("dev dataset size {}".format(len(dev_Y)))
 print("test dataset size {}".format(len(test_X)))
