@@ -36,6 +36,7 @@ dataset_file = config["dataset_path"]
 model_path = config["model_save"]
 
 tf.reset_default_graph() #Clears the default graph stack and resets the global default graph.
+tf.disable_eager_execution() # Disables eager execution
 sess = tf.InteractiveSession() #initializes a tensorflow session
 
 #First critical thing to decide: vocabulary size.
